@@ -1,17 +1,15 @@
 Prompt = require 'prompt'
 Colors = require 'colors'
 Sleep = require 'sleep'
-
 CoffeePhysics = require './physics.js'
 
 
-init = ()->
-	world = new World()
-
-
-	# setup environment via prompt
-	world.setParticleCount(10)
-	world.setupWorld()
+class init
+	constructor: ->
+		world = new World()
+		# setup environment via prompt
+		world.setParticleCount(10)
+		world.setupWorld()
 
 
 class World
@@ -36,7 +34,7 @@ class World
 
 		for i in [0..@particleCount-1] by 1
 			particle = new CoffeePhysics.Particle Math.random()
-			position = new CoffeePhysics.Vector 5+i, 5*i
+			position = new CoffeePhysics.Vector 5*i, 5*i
 			particle.setMass 1
 			particle.setRadius 1
 			particle.moveTo position
@@ -90,5 +88,15 @@ class World
 		setTimeout ()->
 			self.drawWorld()
 		, 0
+		# self = @
+		# setImmediate ()->
+		# 	self.drawWorld()
+		# process.nextTick( (->
+		# 	@drawWorld()
+		# 	return
+		# ).bind(this))
+
+
+
 
 init()
