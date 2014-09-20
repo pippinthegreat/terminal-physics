@@ -1,0 +1,21 @@
+{
+  "name": "terminal-physics",
+  "version": "0.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "colors": "~0.6.2",
+    "prompt": "~0.2.14",
+    "sleep": "~1.1.8"
+  },
+  "devDependencies": {
+    "grunt": "~0.4.5",
+    "grunt-contrib-watch": "~0.6.1",
+    "grunt-contrib-coffee": "~0.11.1"
+  }
+}
